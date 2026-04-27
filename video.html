@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A personalized walkthrough for Karina Taveras — Real Estate in Miramar &amp; South Broward." />
+<title>A walkthrough for Karina · Karina Taveras Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     PALETTE — Option D · Editorial Soft (matches demo page)
+     ============================================================ */
+  :root {
+    --cream: #F6F1EC;
+    --warm-white: #FBF8F4;
+    --espresso: #14141A;
+    --mocha: #2C2A33;
+    --champagne: #D9A89B;
+    --champagne-dark: #A06857;
+    --champagne-light: #ECCFC4;
+    --sand: #E5DDD3;
+    --text-muted: #5A5358;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: rgba(255,255,255,0.86);
+    background: var(--espresso);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Subtle background warmth — barely-there blush gradient on the ink */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217, 168, 155, 0.06), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(217, 168, 155, 0.04), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px 64px;
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* ===== TOP WORDMARK ===== */
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 26px;
+    color: #fff;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    margin-bottom: 56px;
+  }
+  .wordmark .dot { color: var(--champagne); margin: 0 6px; }
+  .wordmark:hover { opacity: 0.78; }
+
+  /* ===== HEADER ===== */
+  header.intro {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 520px;
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 500;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(34px, 5.5vw, 48px);
+    line-height: 1.1;
+    color: #fff;
+    margin-top: 16px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--champagne);
+    font-weight: 300;
+  }
+  .lede {
+    margin-top: 18px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+  }
+
+  /* ===== LOOM EMBED — portrait ratio ===== */
+  .video-wrap {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow:
+      0 24px 60px rgba(0,0,0,0.55),
+      0 0 0 1px rgba(217, 168, 155, 0.08);
+  }
+  .video-aspect {
+    position: relative;
+    width: 100%;
+    /* Portrait 9:16 → padding-bottom 177.78% */
+    padding-bottom: 177.78%;
+    height: 0;
+  }
+  .video-aspect iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* ===== CTA ===== */
+  .cta-wrap {
+    margin-top: 48px;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+  }
+  .cta-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 28px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--champagne);
+    color: var(--espresso);
+    padding: 18px 44px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    border-radius: 0;
+  }
+  .btn-primary:hover {
+    background: #fff;
+    color: var(--espresso);
+    transform: translateY(-2px);
+  }
+
+  /* ===== FOOTER ===== */
+  .foot {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 32px 24px 40px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.4);
+  }
+  .foot a { color: rgba(255,255,255,0.6); }
+  .foot a:hover { color: var(--champagne); }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 640px) {
+    .wrap { padding: 36px 20px 48px; }
+    .wordmark { font-size: 22px; margin-bottom: 40px; }
+    header.intro { margin-bottom: 32px; }
+    .lede { font-size: 14px; }
+    .video-wrap { max-width: 320px; }
+    .cta-wrap { margin-top: 36px; }
+    .cta-title { font-size: 19px; }
+    .btn-primary { padding: 16px 32px; font-size: 11px; width: 100%; max-width: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Wordmark links to live demo -->
+  <a href="https://karina-taveras-demo.vercel.app/" class="wordmark" aria-label="Visit the Karina Taveras demo site">
+    Karina <span class="dot" aria-hidden="true">·</span> Taveras
+  </a>
+
+  <header class="intro">
+    <span class="eyebrow">A personal walkthrough</span>
+    <h1>A few thoughts <em>just for you,</em> Karina.</h1>
+    <p class="lede">A short video walking you through the demo site I put together &mdash; what it does, why I designed it the way I did, and what it could look like in your hands.</p>
+  </header>
+
+  <!-- Loom embed: UI stripped per SOP -->
+  <div class="video-wrap">
+    <div class="video-aspect">
+      <iframe
+        src="https://www.loom.com/embed/13f1f5ba132249e7a83f246a8e826ac3?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
+        frameborder="0"
+        allowfullscreen
+        title="A personalized walkthrough for Karina Taveras"></iframe>
+    </div>
+  </div>
+
+  <div class="cta-wrap">
+    <div class="cta-eyebrow">Ready to explore</div>
+    <p class="cta-title">Have a look around the live site.</p>
+    <a href="https://karina-taveras-demo.vercel.app/" class="btn-primary">View the Demo Site</a>
+  </div>
+
+</div>
+
+<footer class="foot">
+  Designed for Karina Taveras &middot;
+  <a href="https://karina-taveras-demo.vercel.app/">karina-taveras-demo.vercel.app</a>
+</footer>
+
+</body>
+</html>
