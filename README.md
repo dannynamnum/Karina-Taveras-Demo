@@ -1,2 +1,0 @@
-# Karina Taveras Demo
-
