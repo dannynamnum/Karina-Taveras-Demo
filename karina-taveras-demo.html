@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Karina Taveras — Real Estate in Miramar &amp; South Broward. A trusted local guide to South Florida living." />
+<title>Karina Taveras · Miramar Real Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     PALETTE — Option D · Editorial Soft (linen / blush / ink)
+     Var names kept identical to SOP for swap-compatibility.
+     ============================================================ */
+  :root {
+    --cream: #F6F1EC;          /* Linen */
+    --warm-white: #FBF8F4;     /* Off-white */
+    --espresso: #14141A;       /* Ink */
+    --mocha: #2C2A33;          /* Ink soft */
+    --champagne: #D9A89B;      /* Blush */
+    --champagne-dark: #A06857; /* Blush dark (for text on light bg, ADA-safe) */
+    --champagne-light: #ECCFC4;/* Blush light */
+    --sand: #E5DDD3;           /* Linen dark (borders/dividers) */
+    --text-muted: #5A5358;     /* Muted body */
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: var(--mocha);
+    background: var(--warm-white);
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.05;
+    color: var(--espresso);
+    margin-top: 18px;
+  }
+  .section-title em { font-style: italic; color: var(--champagne-dark); }
+  .lede {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin-top: 22px;
+    line-height: 1.85;
+  }
+
+  /* --- NAV (absolute, scrolls away) --- */
+  .nav {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0.06em;
+  }
+  .wordmark .dot { color: var(--champagne); margin: 0 6px; }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.92);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--champagne); }
+  .nav-cta {
+    background: var(--champagne);
+    color: var(--espresso);
+    padding: 12px 26px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  .nav-cta:hover { background: var(--champagne-dark); color: #fff; }
+  .nav-cta-mobile { display: none; }
+
+  /* --- HERO --- */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .hero video, .hero .hero-img-fallback {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(5,3,1,0.55) 0%,
+      rgba(5,3,1,0.68) 50%,
+      rgba(5,3,1,0.93) 100%
+    );
+    z-index: 2;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 980px;
+  }
+  .hero-eyebrow {
+    color: var(--champagne);
+    font-size: 12px;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 28px;
+    display: inline-block;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(52px, 7.5vw, 90px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    color: #fff;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--champagne);
+    font-weight: 300;
+  }
+  .hero p.hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.86);
+    max-width: 560px;
+    margin: 28px auto 0;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .hero-buttons {
+    margin-top: 44px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 16px 36px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--champagne);
+    color: var(--espresso);
+  }
+  .btn-primary:hover {
+    background: var(--champagne-dark);
+    color: #fff;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--champagne);
+    color: var(--champagne);
+  }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 48px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: rgba(255,255,255,0.7);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+    animation: scrollPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(0.4); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+  }
+
+  /* --- STATS BAR --- */
+  .stats {
+    background: var(--espresso);
+    color: #fff;
+    padding: 72px 40px;
+  }
+  .stats-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 5vw, 64px);
+    color: var(--champagne);
+    line-height: 1;
+  }
+  .stat-label {
+    margin-top: 14px;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+  }
+
+  /* --- ABOUT --- */
+  .about { padding: 96px 40px; background: var(--cream); }
+  .about-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .headshot-col {
+    position: relative;
+    align-self: center;
+  }
+  .headshot-wrap {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--sand);
+  }
+  .headshot-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.02) saturate(0.98);
+  }
+  .headshot-badge {
+    position: absolute;
+    bottom: -18px; left: -18px;
+    background: var(--espresso);
+    color: var(--champagne);
+    padding: 24px 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    max-width: 240px;
+    z-index: 2;
+  }
+  .headshot-badge strong {
+    display: block;
+    color: #fff;
+    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .about-body p {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--mocha);
+  }
+  .about-body p:first-of-type { margin-top: 28px; }
+  .credentials {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--sand);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .cred-item .cred-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+  }
+  .cred-item .cred-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--espresso);
+    margin-top: 6px;
+    line-height: 1.2;
+  }
+
+  /* --- LISTINGS --- */
+  .listings { padding: 96px 40px; background: var(--warm-white); }
+  .listings-header {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .listings-header .header-text { max-width: 580px; }
+  .listings-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .listing-card {
+    background: var(--cream);
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  .listing-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(28,20,16,0.12); }
+  .listing-photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+  }
+  .listing-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+  .listing-card:hover .listing-photo img { transform: scale(1.06); }
+  .listing-tag {
+    position: absolute;
+    top: 16px; left: 16px;
+    background: rgba(28,20,16,0.85);
+    color: var(--champagne);
+    padding: 6px 14px;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .listing-info { padding: 26px 28px 32px; }
+  .listing-loc {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+  }
+  .listing-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--espresso);
+    margin-top: 10px;
+    line-height: 1;
+  }
+  .listing-meta {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .listing-meta span:not(:last-child)::after {
+    content: "·";
+    margin-left: 18px;
+    color: var(--champagne-dark);
+  }
+  .listing-meta span:not(:last-child) { margin-right: -4px; }
+
+  /* --- SPECIALTIES --- */
+  .specialties { padding: 96px 40px; background: var(--cream); }
+  .specialties-header {
+    max-width: 1080px;
+    margin: 0 auto 64px;
+    text-align: center;
+  }
+  .specialties-header .lede { margin-left: auto; margin-right: auto; }
+  .specialties-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .specialty-card {
+    background: var(--warm-white);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .specialty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(28,20,16,0.1);
+  }
+  .specialty-img {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .specialty-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .specialty-body { padding: 32px 32px 36px; }
+  .specialty-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+  }
+  .specialty-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--espresso);
+    margin-top: 12px;
+    line-height: 1.15;
+  }
+  .specialty-body p {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.85;
+  }
+
+  /* --- TESTIMONIALS --- */
+  .testimonials {
+    background: var(--espresso);
+    color: #fff;
+    padding: 96px 0;
+    overflow: hidden;
+  }
+  .testimonials-header {
+    max-width: 1080px;
+    margin: 0 auto 56px;
+    padding: 0 40px;
+    text-align: center;
+  }
+  .testimonials-header .section-title { color: #fff; }
+  .testimonials-header .section-title em { color: var(--champagne); }
+  .testimonials-header .eyebrow { color: var(--champagne); }
+  .slider-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+  }
+  .slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    cursor: grab;
+    padding-bottom: 8px;
+  }
+  .slider:active { cursor: grabbing; }
+  .slider::-webkit-scrollbar { display: none; }
+  .testimonial {
+    flex: 0 0 calc(85% - 20px);
+    max-width: 640px;
+    background: #fff;
+    color: var(--espresso);
+    padding: 44px 44px 40px;
+    scroll-snap-align: start;
+  }
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    color: var(--champagne);
+    line-height: 0.5;
+    margin-bottom: 8px;
+  }
+  .testimonial p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--mocha);
+  }
+  .testimonial-author {
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--sand);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .author-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--espresso);
+    letter-spacing: 0.04em;
+  }
+  .author-loc {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .slider-controls {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    padding: 0 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slider-dots {
+    display: flex;
+    gap: 10px;
+  }
+  .slider-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .slider-dot.active {
+    background: var(--champagne);
+    transform: scale(1.3);
+  }
+  .slider-arrows {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .slider-counter {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.7);
+    font-variant-numeric: tabular-nums;
+  }
+  .arrow-btn {
+    width: 44px; height: 44px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .arrow-btn:hover {
+    background: var(--champagne);
+    border-color: var(--champagne);
+    color: var(--espresso);
+  }
+  .arrow-btn svg { width: 14px; height: 14px; }
+  .arrow-btn:focus-visible { outline: 2px solid var(--champagne); outline-offset: 3px; }
+
+  /* --- CONTACT --- */
+  .contact { padding: 96px 40px; background: var(--warm-white); }
+  .contact-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+  }
+  .contact-info { padding-right: 24px; }
+  .contact-info .section-title { margin-top: 18px; }
+  .contact-info .lede { margin-top: 22px; }
+  .contact-list {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .contact-icon-wrap {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--champagne-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-icon-wrap svg {
+    width: 20px; height: 20px;
+    stroke: var(--mocha);
+    stroke-width: 1.75;
+    fill: none;
+  }
+  .contact-item .label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+  }
+  .contact-item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--espresso);
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+  .contact-item a.val:hover { color: var(--champagne-dark); }
+
+  .contact-form {
+    background: var(--cream);
+    padding: 48px 44px 44px;
+  }
+  .contact-form h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: var(--espresso);
+    line-height: 1.15;
+  }
+  .contact-form .form-sub {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  form .form-row {
+    margin-top: 22px;
+  }
+  form .form-row.cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  form label {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+  }
+  form input, form textarea, form select {
+    width: 100%;
+    padding: 12px 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--espresso);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--sand);
+    transition: border-color 0.3s ease;
+  }
+  form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-bottom-color: var(--champagne-dark);
+  }
+  form textarea { resize: vertical; min-height: 80px; }
+  .submit-btn {
+    margin-top: 32px;
+    width: 100%;
+    background: var(--espresso);
+    color: #fff;
+    padding: 18px;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  .submit-btn:hover { background: var(--champagne-dark); }
+  .submit-btn:focus-visible { outline: 2px solid var(--champagne); outline-offset: 2px; }
+  .form-privacy {
+    margin-top: 18px;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  /* --- FOOTER --- */
+  .footer {
+    background: var(--espresso);
+    color: rgba(255,255,255,0.7);
+    padding: 72px 40px 120px;
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .footer-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+  .footer-wordmark .dot { color: var(--champagne); margin: 0 8px; }
+  .footer-tag {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 360px;
+  }
+  .footer h4 {
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .footer ul { list-style: none; }
+  .footer ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .footer ul a { transition: color 0.3s ease; }
+  .footer ul a:hover { color: var(--champagne); }
+  .footer-bottom {
+    max-width: 1080px;
+    margin: 56px auto 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .footer-bottom span { color: rgba(255,255,255,0.5); }
+
+  /* --- STICKY BOTTOM BAR --- */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--espresso);
+    color: #fff;
+    padding: 12px 40px;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    border-top: 1px solid var(--champagne-dark);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .sticky-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #fff;
+  }
+  .sticky-text .accent { color: var(--champagne); }
+  .sticky-cta {
+    background: var(--champagne);
+    color: var(--espresso);
+    padding: 10px 22px;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    flex-shrink: 0;
+    transition: background 0.3s ease;
+  }
+  .sticky-cta:hover { background: #fff; }
+
+  /* --- POPUP --- */
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5,3,1,0.55);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .popup-overlay.show { display: flex; opacity: 1; }
+  .popup {
+    background: var(--warm-white);
+    max-width: 720px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+    max-height: 92vh;
+  }
+  .popup-overlay.show .popup { transform: translateY(0); }
+  .popup-img {
+    background: var(--sand);
+    overflow: hidden;
+  }
+  .popup-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  .popup-body {
+    padding: 44px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .popup-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--champagne-dark);
+    font-weight: 500;
+  }
+  .popup h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--espresso);
+    line-height: 1.15;
+    margin-top: 12px;
+  }
+  .popup p {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .popup form { margin-top: 26px; }
+  .popup input {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--sand);
+    background: transparent;
+    border-top: none; border-left: none; border-right: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--espresso);
+  }
+  .popup input:focus {
+    outline: none;
+    border-bottom-color: var(--champagne-dark);
+  }
+  .popup .submit-btn { margin-top: 22px; }
+  .popup-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    color: var(--espresso);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 2;
+    transition: background 0.3s ease;
+  }
+  .popup-close:hover { background: var(--champagne); }
+  .popup-success {
+    display: none;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  .popup-success.show { display: block; }
+  .popup-success .check {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--champagne-light);
+    color: var(--mocha);
+    margin: 0 auto 18px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .popup-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--espresso);
+  }
+  .popup-success p { margin-top: 8px; color: var(--text-muted); font-size: 14px; }
+
+  /* --- SCROLL REVEAL --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal.d1 { transition-delay: 0.1s; }
+  .reveal.d2 { transition-delay: 0.2s; }
+  .reveal.d3 { transition-delay: 0.3s; }
+
+  /* ============ TABLET (max 960px) ============ */
+  @media (max-width: 960px) {
+    .nav { padding: 22px 24px; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-cta-mobile { display: inline-block; }
+
+    .stats-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-inner { grid-template-columns: 1fr; gap: 48px; }
+    .headshot-col { max-width: 420px; margin: 0 auto; width: 100%; }
+    .headshot-wrap { max-width: none; }
+    .headshot-badge {
+      position: static;
+      margin-top: 0;
+      width: 100%;
+      max-width: none;
+      padding: 24px 28px;
+      text-align: center;
+      box-sizing: border-box;
+      display: block;
+    }
+    .listings-header { flex-direction: column; align-items: flex-start; }
+    .listings-grid { grid-template-columns: repeat(2, 1fr); }
+    .specialties-grid { grid-template-columns: 1fr; }
+    .testimonial { flex: 0 0 80%; }
+    .contact-inner { grid-template-columns: 1fr; gap: 56px; }
+    .contact-info { padding-right: 0; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .popup { grid-template-columns: 1fr; max-width: 480px; }
+    .popup-img { aspect-ratio: 16/9; }
+  }
+
+  /* ============ MOBILE (max 640px) ============ */
+  @media (max-width: 640px) {
+    .nav { padding: 20px 16px; }
+    .wordmark { font-size: 20px; }
+
+    .hero { min-height: 100vh; }
+    .hero-content { padding: 0 20px 80px; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.3em; margin-bottom: 22px; }
+    .hero p.hero-sub { margin-top: 22px; font-size: 15px; }
+    .hero-buttons { margin-top: 32px; flex-direction: column; gap: 12px; width: 100%; }
+    .hero-buttons .btn { width: 100%; padding: 16px; }
+    .scroll-indicator { bottom: 20px; }
+
+    .stats { padding: 64px 20px; }
+    .about, .listings, .specialties, .contact { padding: 64px 20px; }
+    .testimonials { padding: 64px 0; }
+    .testimonials-header, .slider-wrap, .slider-controls { padding-left: 20px; padding-right: 20px; }
+
+    .listings-grid { grid-template-columns: 1fr; }
+    .listings-header { margin-bottom: 36px; }
+    .specialties-header { margin-bottom: 40px; }
+    .contact-form { padding: 36px 24px 32px; }
+    form .form-row.cols { grid-template-columns: 1fr; gap: 0; }
+    form .form-row.cols .form-row { margin-top: 22px; }
+
+    .footer { padding: 56px 20px 100px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+
+    .sticky-bar { padding: 10px 16px; gap: 12px; }
+    .sticky-text { font-size: 12px; }
+    .sticky-text .hide-sm { display: none; }
+    .sticky-cta { padding: 8px 14px; font-size: 11px; }
+
+    .credentials { grid-template-columns: 1fr; }
+    .testimonial { flex: 0 0 calc(100% - 8px); padding: 32px 28px 30px; }
+    .testimonial p { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =============== NAV =============== -->
+<nav class="nav" aria-label="Main navigation">
+  <a href="#top" class="wordmark">Karina <span class="dot" aria-hidden="true">·</span> Taveras</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#listings">Listings</a></li>
+    <li><a href="#specialties">Specialties</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Schedule a Call</a>
+  <a href="tel:+19548256460" class="nav-cta nav-cta-mobile" aria-label="Call Karina">Call · (954) 825-6460</a>
+</nav>
+
+<!-- =============== HERO =============== -->
+<section class="hero" id="top">
+  <!--
+    HERO VIDEO — placeholder using watermarked iStock comp (istockphoto-2162631799,
+    aerial of South Florida waterfront homes). Visible iStock watermark — must be
+    swapped for licensed/Pexels equivalent before going live.
+    To swap: replace ./hero.mp4 (and ./hero-poster.jpg) with the licensed file.
+    Both files must live in the same folder as this HTML when deployed to Vercel.
+  -->
+  <video
+    autoplay muted loop playsinline preload="auto"
+    poster="./hero-poster.jpg"
+    aria-hidden="true">
+    <source src="./hero.mp4" type="video/mp4" />
+  </video>
+  <img class="hero-img-fallback" src="./hero-poster.jpg" alt="" aria-hidden="true" style="display:none;" />
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">Miramar · South Broward · Florida</span>
+    <h1>Home is where<br/><em>your story</em> begins.</h1>
+    <p class="hero-sub">A trusted local guide to South Florida living — helping families find the right neighborhood, the right home, and the right next chapter.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+      <a href="#listings" class="btn btn-ghost">Browse Listings</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+<!-- =============== STATS BAR =============== -->
+<section class="stats" aria-label="Statistics">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Local · South Broward</div>
+    </div>
+    <div class="stat-item reveal d1">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Languages · English &amp; Spanish</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Days a Week · Always Available</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ABOUT =============== -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="headshot-col reveal">
+      <div class="headshot-wrap">
+        <img
+          src="https://m.cbhomes.com/a/-1/266221/ML36AyS72CFg/profile.jpg"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=600&q=80&fit=crop';"
+          alt="Karina Taveras, Sales Associate at Coldwell Banker Realty"
+        />
+      </div>
+      <div class="headshot-badge">
+        <strong>Coldwell Banker Realty</strong>
+        Sales Associate <em>serving South Broward</em>
+      </div>
+    </div>
+    <div class="about-body reveal d1">
+      <span class="eyebrow">About Karina</span>
+      <h2 class="section-title">A neighbor before <em>an agent.</em></h2>
+      <p>I&rsquo;m Karina Taveras, a real estate professional with Coldwell Banker Realty&rsquo;s Southwest Broward office. I help buyers and sellers across Miramar, Pembroke Pines, Weston, and the surrounding South Broward neighborhoods navigate one of the most personal decisions they&rsquo;ll ever make.</p>
+      <p>The market here moves quickly, but the right home doesn&rsquo;t come from rushing &mdash; it comes from knowing the streets, the schools, the price points, and the people. That&rsquo;s the work I do every day, in two languages, on your timeline.</p>
+      <div class="credentials">
+        <div class="cred-item">
+          <div class="cred-label">Brokerage</div>
+          <div class="cred-val">Coldwell Banker Realty</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-label">Office</div>
+          <div class="cred-val">Southwest Broward</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-label">Languages</div>
+          <div class="cred-val">English &amp; Spanish</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-label">Service Area</div>
+          <div class="cred-val">South Broward, FL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LISTINGS =============== -->
+<section class="listings" id="listings">
+  <div class="listings-header">
+    <div class="header-text reveal">
+      <span class="eyebrow">Featured Properties</span>
+      <h2 class="section-title">Curated homes in <em>South Broward.</em></h2>
+    </div>
+    <p class="lede reveal d1">A selection of properties currently available across Miramar, Pembroke Pines, and the surrounding neighborhoods. Each one with its own story.</p>
+  </div>
+  <div class="listings-grid">
+    <article class="listing-card reveal">
+      <div class="listing-photo">
+        <span class="listing-tag">For Sale</span>
+        <img
+          src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80&fit=crop"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&fit=crop';"
+          alt="Modern single-family home with manicured landscaping in Miramar" />
+      </div>
+      <div class="listing-info">
+        <div class="listing-loc">Silver Lakes · Miramar</div>
+        <div class="listing-price">$725,000</div>
+        <div class="listing-meta">
+          <span>4 Beds</span><span>3 Baths</span><span>2,640 sqft</span>
+        </div>
+      </div>
+    </article>
+    <article class="listing-card reveal d1">
+      <div class="listing-photo">
+        <span class="listing-tag">New Listing</span>
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&fit=crop"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fit=crop';"
+          alt="Spacious family home with two-car garage in Pembroke Pines" />
+      </div>
+      <div class="listing-info">
+        <div class="listing-loc">Pembroke Pines</div>
+        <div class="listing-price">$589,000</div>
+        <div class="listing-meta">
+          <span>3 Beds</span><span>2.5 Baths</span><span>2,180 sqft</span>
+        </div>
+      </div>
+    </article>
+    <article class="listing-card reveal d2">
+      <div class="listing-photo">
+        <span class="listing-tag">Just Sold</span>
+        <img
+          src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80&fit=crop"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1711653429988-37764c715782?w=800&q=80&fit=crop';"
+          alt="Single-family home representing a recent sale in Weston" />
+      </div>
+      <div class="listing-info">
+        <div class="listing-loc">Weston</div>
+        <div class="listing-price">$895,000</div>
+        <div class="listing-meta">
+          <span>5 Beds</span><span>4 Baths</span><span>3,420 sqft</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =============== SPECIALTIES =============== -->
+<section class="specialties" id="specialties">
+  <div class="specialties-header reveal">
+    <span class="eyebrow">How I Help</span>
+    <h2 class="section-title">Specialties built for <em>real life.</em></h2>
+    <p class="lede">Every transaction is different. These are the four areas where I spend most of my time &mdash; and where my experience can make the biggest difference for you.</p>
+  </div>
+  <div class="specialties-grid">
+    <article class="specialty-card reveal">
+      <div class="specialty-img">
+        <img src="https://images.unsplash.com/photo-1733244766159-f58f4184fd38?w=900&q=80&fit=crop" alt="Real estate agent handing over the keys to a new home" />
+      </div>
+      <div class="specialty-body">
+        <span class="specialty-eyebrow">First-Time Buyers</span>
+        <h3 class="specialty-title">Your first home, without the guesswork.</h3>
+        <p>From pre-approval to closing day, I walk first-time buyers through every step in plain language, both English and Spanish. No surprises, no jargon &mdash; just the answers you need to feel confident.</p>
+      </div>
+    </article>
+    <article class="specialty-card reveal d1">
+      <div class="specialty-img">
+        <img src="https://images.unsplash.com/photo-1759352642358-d4b1d10ed3dc?w=900&q=80&fit=crop" alt="Tropical Miami street lined with palm trees on a sunny day" />
+      </div>
+      <div class="specialty-body">
+        <span class="specialty-eyebrow">Family Homes</span>
+        <h3 class="specialty-title">Schools, space, and staying put.</h3>
+        <p>South Broward families know what matters: the right school zone, the right backyard, the right block. I help growing families find homes they can settle into for the long run.</p>
+      </div>
+    </article>
+    <article class="specialty-card reveal d2">
+      <div class="specialty-img">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&fit=crop" alt="A wooden model house representing real estate listings" />
+      </div>
+      <div class="specialty-body">
+        <span class="specialty-eyebrow">Sellers &amp; Listings</span>
+        <h3 class="specialty-title">Position your home to move.</h3>
+        <p>Pricing strategy, professional marketing, and the network of a global brokerage behind every listing. The goal is simple: the strongest possible offer in the shortest reasonable time.</p>
+      </div>
+    </article>
+    <article class="specialty-card reveal d3">
+      <div class="specialty-img">
+        <img src="https://images.unsplash.com/photo-1728324580682-d7e19f767f14?w=900&q=80&fit=crop" alt="Miami Beach sunset over palm trees" />
+      </div>
+      <div class="specialty-body">
+        <span class="specialty-eyebrow">Relocation</span>
+        <h3 class="specialty-title">New to South Florida? Let&rsquo;s start there.</h3>
+        <p>Moving to Broward from out of state &mdash; or from another country &mdash; comes with its own set of questions. I help newcomers find their footing, their neighborhood, and their first home down here.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =============== TESTIMONIALS =============== -->
+<section class="testimonials">
+  <div class="testimonials-header reveal">
+    <span class="eyebrow">Client Stories</span>
+    <h2 class="section-title">Words from <em>the people</em> I&rsquo;ve helped.</h2>
+  </div>
+  <div class="slider-wrap">
+    <div class="slider" id="slider" role="list">
+      <div class="testimonial" role="listitem">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Karina made our first home purchase feel manageable instead of overwhelming. She answered every question, in English and Spanish, and never made us feel rushed.</p>
+        <div class="testimonial-author">
+          <span class="author-name">Marisol &amp; Daniel R.</span>
+          <span class="author-loc">Miramar</span>
+        </div>
+      </div>
+      <div class="testimonial" role="listitem">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>We listed with Karina after another agent struggled to bring offers. Within three weeks she had us under contract above asking. Real local knowledge makes a difference.</p>
+        <div class="testimonial-author">
+          <span class="author-name">The Hernandez Family</span>
+          <span class="author-loc">Pembroke Pines</span>
+        </div>
+      </div>
+      <div class="testimonial" role="listitem">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Relocating to Florida from out of state, we needed someone we could trust without ever meeting in person. Karina earned that trust on day one and never let us down.</p>
+        <div class="testimonial-author">
+          <span class="author-name">James &amp; Amelia T.</span>
+          <span class="author-loc">Weston</span>
+        </div>
+      </div>
+      <div class="testimonial" role="listitem">
+        <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+        <p>Honest, patient, and incredibly responsive. Karina treated our $400K starter home with the same care she&rsquo;d give a million-dollar listing. That&rsquo;s the difference.</p>
+        <div class="testimonial-author">
+          <span class="author-name">Carlos M.</span>
+          <span class="author-loc">Cooper City</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slider-controls">
+    <div class="slider-dots" role="tablist" aria-label="Testimonial slides">
+      <button class="slider-dot active" data-idx="0" role="tab" aria-label="Testimonial 1"></button>
+      <button class="slider-dot" data-idx="1" role="tab" aria-label="Testimonial 2"></button>
+      <button class="slider-dot" data-idx="2" role="tab" aria-label="Testimonial 3"></button>
+      <button class="slider-dot" data-idx="3" role="tab" aria-label="Testimonial 4"></button>
+    </div>
+    <div class="slider-arrows">
+      <span class="slider-counter" id="sliderCounter">1 / 4</span>
+      <button class="arrow-btn" id="prevBtn" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="arrow-btn" id="nextBtn" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CONTACT =============== -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title">Let&rsquo;s find <em>your next home.</em></h2>
+      <p class="lede">Whether you&rsquo;re buying, selling, or just starting to think about it, I&rsquo;m always available for a no-pressure conversation. Reach out any way that works for you.</p>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="label">Direct Line</div>
+            <a class="val" href="tel:+19548256460">(954) 825-6460</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="label">Email</div>
+            <a class="val" href="mailto:karina.taveras@coldwellbanker.com">karina.taveras@coldwellbanker.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="label">Office</div>
+            <div class="val">Coldwell Banker · Southwest Broward<br/>14469 Miramar Pkwy, Miramar, FL 33027</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal d1">
+      <h3>Tell me what you&rsquo;re looking for.</h3>
+      <p class="form-sub">I&rsquo;ll respond within one business day &mdash; usually much sooner.</p>
+      <form id="contactForm" novalidate>
+        <div class="form-row cols">
+          <div>
+            <label for="cf-first">First Name</label>
+            <input type="text" id="cf-first" name="first" aria-label="First name" required />
+          </div>
+          <div>
+            <label for="cf-last">Last Name</label>
+            <input type="text" id="cf-last" name="last" aria-label="Last name" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" aria-label="Email address" required />
+        </div>
+        <div class="form-row">
+          <label for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" name="phone" aria-label="Phone number" />
+        </div>
+        <div class="form-row">
+          <label for="cf-interest">I&rsquo;m Interested In</label>
+          <select id="cf-interest" name="interest" aria-label="Interest">
+            <option>Buying a home</option>
+            <option>Selling my home</option>
+            <option>Both buying &amp; selling</option>
+            <option>Just exploring the market</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="cf-msg">Anything I should know?</label>
+          <textarea id="cf-msg" name="message" rows="2" aria-label="Message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <p class="form-privacy">Your information is never shared.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-wordmark">Karina <span class="dot" aria-hidden="true">·</span> Taveras</div>
+      <p class="footer-tag">Real estate in Miramar &amp; South Broward, served with local knowledge and personal care &mdash; in English and Spanish.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#specialties">Specialties</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="tel:+19548256460">(954) 825-6460</a></li>
+        <li><a href="mailto:karina.taveras@coldwellbanker.com">Email Karina</a></li>
+        <li>Southwest Broward Office</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Karina Taveras &middot; Coldwell Banker Realty. All rights reserved.</span>
+    <span>Sales Associate · Independent Contractor · Equal Housing Opportunity</span>
+  </div>
+</footer>
+
+<!-- =============== STICKY BOTTOM BAR =============== -->
+<div class="sticky-bar" role="complementary" aria-label="Quick contact">
+  <span class="sticky-text"><span class="hide-sm">Ready to start the conversation?</span> <span class="accent">Call direct</span></span>
+  <a href="tel:+19548256460" class="sticky-cta">(954) 825-6460</a>
+</div>
+
+<!-- =============== POPUP =============== -->
+<div class="popup-overlay" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+  <div class="popup">
+    <button class="popup-close" id="popupClose" aria-label="Close popup">&times;</button>
+    <div class="popup-img" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80&fit=crop&crop=bottom"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80&fit=crop';"
+        alt="" />
+    </div>
+    <div class="popup-body" id="popupForm">
+      <span class="popup-eyebrow">Off-Market Listings</span>
+      <h3 id="popupTitle">Be the first to know.</h3>
+      <p>Some of South Broward&rsquo;s best homes never hit the public market. Get them straight to your inbox &mdash; no spam, ever.</p>
+      <form id="popupFormEl">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button type="submit" class="submit-btn">Join the List</button>
+      </form>
+    </div>
+    <div class="popup-success" id="popupSuccess" aria-hidden="true">
+      <div class="check" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You&rsquo;re on the list.</h3>
+      <p>Watch your inbox for South Broward&rsquo;s best new listings.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ===== SCROLL REVEAL ===== */
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  reveals.forEach((el) => io.observe(el));
+
+  /* ===== TESTIMONIAL SLIDER ===== */
+  const slider = document.getElementById('slider');
+  const dots = document.querySelectorAll('.slider-dot');
+  const counter = document.getElementById('sliderCounter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const slides = slider.children;
+  const total = slides.length;
+  let current = 0;
+
+  function goTo(idx) {
+    if (idx < 0) idx = 0;
+    if (idx > total - 1) idx = total - 1;
+    current = idx;
+    const slideWidth = slides[0].getBoundingClientRect().width + 24; /* gap */
+    slider.scrollTo({ left: idx * slideWidth, behavior: 'smooth' });
+    updateUI();
+  }
+  function updateUI() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    counter.textContent = (current + 1) + ' / ' + total;
+  }
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  /* Sync on scroll */
+  let scrollTimer;
+  slider.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const slideWidth = slides[0].getBoundingClientRect().width + 24;
+      const idx = Math.round(slider.scrollLeft / slideWidth);
+      if (idx !== current && idx >= 0 && idx < total) {
+        current = idx;
+        updateUI();
+      }
+    }, 80);
+  });
+
+  /* Drag-to-scroll on desktop */
+  let isDown = false, startX, scrollLeft;
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => { isDown = false; });
+  slider.addEventListener('mouseup', () => { isDown = false; });
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+
+  /* ===== POPUP ===== */
+  const popup = document.getElementById('popup');
+  const popupClose = document.getElementById('popupClose');
+  const popupFormEl = document.getElementById('popupFormEl');
+  const popupForm = document.getElementById('popupForm');
+  const popupSuccess = document.getElementById('popupSuccess');
+  const POPUP_KEY = 'kt_popup_dismissed';
+
+  function showPopup() {
+    if (sessionStorage.getItem(POPUP_KEY)) return;
+    popup.classList.add('show');
+  }
+  function hidePopup() {
+    popup.classList.remove('show');
+    sessionStorage.setItem(POPUP_KEY, '1');
+  }
+  setTimeout(showPopup, 4000);
+  popupClose.addEventListener('click', hidePopup);
+  popup.addEventListener('click', (e) => { if (e.target === popup) hidePopup(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popup.classList.contains('show')) hidePopup(); });
+
+  popupFormEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+    popupForm.style.display = 'none';
+    popupSuccess.classList.add('show');
+    popupSuccess.setAttribute('aria-hidden', 'false');
+    setTimeout(hidePopup, 3000);
+  });
+
+  /* ===== CONTACT FORM ===== */
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.textContent = 'Message Sent · Thank You';
+    btn.style.background = 'var(--champagne-dark)';
+    e.target.reset();
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = 'var(--espresso)';
+    }, 4000);
+  });
+
+  /* ===== VIDEO FALLBACK ===== */
+  const heroVideo = document.querySelector('.hero video');
+  const heroFallback = document.querySelector('.hero-img-fallback');
+  heroVideo.addEventListener('error', () => {
+    heroVideo.style.display = 'none';
+    heroFallback.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
