@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 48px 24px 64px;
+    padding: 28px 24px 64px;
     max-width: 720px;
     margin: 0 auto;
     width: 100%;
@@ -73,7 +73,7 @@
     letter-spacing: 0.06em;
     white-space: nowrap;
     transition: opacity 0.3s ease;
-    margin-bottom: 56px;
+    margin-bottom: 20px;
   }
   .wordmark .dot { color: var(--champagne); margin: 0 6px; }
   .wordmark:hover { opacity: 0.78; }
@@ -81,7 +81,7 @@
   /* ===== HEADER ===== */
   header.intro {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     max-width: 520px;
   }
   .eyebrow {
@@ -214,12 +214,77 @@
   .foot a { color: rgba(255,255,255,0.6); }
   .foot a:hover { color: var(--champagne); }
 
+  /* ===== STICKY CTA BAR (Danny's brand layer) ===== */
+  .sticky-cta-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    height: 64px;
+    background: #F0EDE8;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+  }
+  .sticky-cta-inner {
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .sticky-cta-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #3A3530;
+    white-space: nowrap;
+  }
+  .sticky-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #151821;
+    color: #F0EDE8;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    padding: 11px 24px;
+    border-radius: 2px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .sticky-cta-btn .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  .sticky-cta-btn:hover {
+    background: #2C2A33;
+    transform: translateY(-1px);
+  }
+  .sticky-cta-btn:hover .arrow {
+    transform: translateX(3px);
+  }
+
+  /* Body padding so video isn't clipped behind the sticky bar */
+  body {
+    padding-bottom: 64px;
+  }
+
   /* ===== MOBILE ===== */
   @media (max-width: 640px) {
-    .wrap { padding: 36px 20px 48px; }
-    .wordmark { font-size: 22px; margin-bottom: 40px; }
-    header.intro { margin-bottom: 32px; }
-    .lede { font-size: 14px; }
+    body { padding-bottom: 60px; }
+    .sticky-cta-bar { height: 60px; padding: 0 16px; }
+    .sticky-cta-inner { gap: 12px; }
+    .sticky-cta-label { font-size: 12px; }
+    .sticky-cta-btn { padding: 10px 18px; font-size: 12px; }
+    .wrap { padding: 24px 20px 48px; }
+    .wordmark { font-size: 22px; margin-bottom: 18px; }
+    header.intro { margin-bottom: 20px; }
     .video-wrap { max-width: 320px; }
     .cta-wrap { margin-top: 36px; }
     .cta-title { font-size: 19px; }
@@ -238,7 +303,6 @@
 
   <header class="intro">
     <span class="eyebrow">A personal walkthrough</span>
-    <h1>A few thoughts <em>just for you,</em> Karina.</h1>
   </header>
 
   <!-- Loom embed: UI stripped per SOP -->
@@ -265,6 +329,15 @@
   Designed for Karina Taveras &middot;
   <a href="https://karina-taveras-demo.vercel.app/">karina-taveras-demo.vercel.app</a>
 </footer>
+
+<aside class="sticky-cta-bar" aria-label="Book an introductory call">
+  <div class="sticky-cta-inner">
+    <span class="sticky-cta-label">Like what you see?</span>
+    <a href="https://fantastical.app/Namnum/Intro-conversation" class="sticky-cta-btn" target="_blank" rel="noopener">
+      Let&rsquo;s Talk <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</aside>
 
 </body>
 </html>
